@@ -68,3 +68,37 @@ describe('Test Balanced Paran with a forEach on a split string', () => {
     expect(isBalanced2('((a()b)c(l(pnq))()')).toEqual(false);
   });
 });
+
+describe('Test Balanced Parans with a for loop and counters using the spread operator', () => {
+  test('empty string', () => {
+    expect(isBalanced('')).toEqual(true);
+  });
+
+  test('(', () => {
+    expect(isBalanced('(')).toEqual(false);
+  });
+
+  test('()', () => {
+    expect(isBalanced('()')).toEqual(true);
+  });
+
+  test('(1)', () => {
+    expect(isBalanced('(1)')).toEqual(true);
+  });
+
+  test(')(', () => {
+    expect(isBalanced(')(')).toEqual(false);
+  });
+
+  test('())(()', () => {
+    expect(isBalanced('())(()')).toEqual(false);
+  });
+
+  test('((a()b)c(l(pnq))())', () => {
+    expect(isBalanced('((a()b)c(l(pnq))())')).toEqual(true);
+  });
+
+  test('((a()b)c(l(pnq))()', () => {
+    expect(isBalanced('((a()b)c(l(pnq))()')).toEqual(false);
+  });
+});

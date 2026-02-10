@@ -43,3 +43,25 @@ export function isBalanced2(s: string): boolean {
 
   return balanced && numOpenParens === 0;
 }
+
+export function isBalanced3(s: string): boolean {
+  // x is a string. return whether its parentheses are balanced
+  // that is, whether every opening ( has a closing )
+  let leftCount = 0;
+  let rightCount = 0;
+  const cArray = [...s];
+
+  for (let i = 0; i < cArray.length; i++) {
+    if (cArray[i] === '(') {
+      leftCount++;
+    } else if (cArray[i] === ')') {
+      rightCount++;
+    }
+
+    if (rightCount > leftCount) {
+      return false;
+    }
+  }
+
+  return leftCount === rightCount;
+}
