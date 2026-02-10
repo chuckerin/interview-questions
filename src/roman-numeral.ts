@@ -80,14 +80,14 @@ export const intToRomanNumeral3 = (num: number): string => {
 };
 
 function replaceInvalidRomanNumerals(str: string): string {
-  enum ShorcutRomanNumMap {
-    DCCCC = 'CM', // 900
-    CCCC = 'CD', // 400
-    LXXXX = 'XC', // 90
-    XXXX = 'XL', // 40
-    VIIII = 'IX', // 9
-    IIII = 'IV', // 4
-  }
+  const ShorcutRomanNumMap: Record<string, string> = {
+    DCCCC: 'CM', // 900
+    CCCC: 'CD', // 400
+    LXXXX: 'XC', // 90
+    XXXX: 'XL', // 40
+    VIIII: 'IX', // 9
+    IIII: 'IV', // 4
+  };
 
   for (const [key, value] of Object.entries(ShorcutRomanNumMap)) {
     // console.log(`Key: ${key}, Value: ${value}`);
