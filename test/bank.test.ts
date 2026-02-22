@@ -153,3 +153,9 @@ describe('Test Bank Transactions', () => {
     return expect(output).toBe(validOverdraftTransactionsResults);
   });
 });
+
+describe('Test Empty file', () => {
+  test('Invalid empty file', () => {
+    return expect(writeOutput('')).toBe(undefined);
+  });
+});

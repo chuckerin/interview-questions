@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest';
-import { isBalanced, isBalanced2 } from '../src/balanced-parans';
+import { isBalanced, isBalanced2, isBalanced3 } from '../src/balanced-parans';
 
 describe('Test Balanced Parans with a for loop and counters', () => {
   test('empty string', () => {
@@ -71,34 +71,34 @@ describe('Test Balanced Paran with a forEach on a split string', () => {
 
 describe('Test Balanced Parans with a for loop and counters using the spread operator', () => {
   test('empty string', () => {
-    expect(isBalanced('')).toEqual(true);
+    expect(isBalanced3('')).toEqual(true);
   });
 
   test('(', () => {
-    expect(isBalanced('(')).toEqual(false);
+    expect(isBalanced3('(')).toEqual(false);
   });
 
   test('()', () => {
-    expect(isBalanced('()')).toEqual(true);
+    expect(isBalanced3('()')).toEqual(true);
   });
 
   test('(1)', () => {
-    expect(isBalanced('(1)')).toEqual(true);
+    expect(isBalanced3('(1)')).toEqual(true);
   });
 
   test(')(', () => {
-    expect(isBalanced(')(')).toEqual(false);
+    expect(isBalanced3(')(')).toEqual(false);
   });
 
   test('())(()', () => {
-    expect(isBalanced('())(()')).toEqual(false);
+    expect(isBalanced3('())(()')).toEqual(false);
   });
 
   test('((a()b)c(l(pnq))())', () => {
-    expect(isBalanced('((a()b)c(l(pnq))())')).toEqual(true);
+    expect(isBalanced3('((a()b)c(l(pnq))())')).toEqual(true);
   });
 
   test('((a()b)c(l(pnq))()', () => {
-    expect(isBalanced('((a()b)c(l(pnq))()')).toEqual(false);
+    expect(isBalanced3('((a()b)c(l(pnq))()')).toEqual(false);
   });
 });
